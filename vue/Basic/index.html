@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Vue-Basics</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<div id="vue-instance">
+	<!-- data binding -->
+	Enter a greeting: <input type="text" v-model="greeting">
+	<p>You have inputed: {{ greeting }}</p>
+	<!-- data-binding-select -->
+	Choose a car: 
+	<select v-model="selected">
+		<option v-for="option in options" v-bind:value="option.value">
+			{{ option.text }}
+		</option>
+	</select>
+	<p>You have choosed the {{ selected }} option</p>
+	<!-- event -->
+	<button @click="showTime">Show time</button>
+	<!-- v-if -->
+	<div v-if="isLoggedIn">
+		Logged! input disappeared
+		<button @click="login" type="submit">Logout</button>
+	</div>
+	<div v-else="isLoggedIn">
+		<input type="text" placeholder="username">
+		<input type="password" placeholder="password">
+		<button type="submit" @click="login">Login</button>
+	</div>
+</div>
+	
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+	<script>
+		var vm = new Vue({
+			el: '#vue-instance',
+			data: {
+				greeting: 'Hello VueJs',
+				selected: 'C',
+				options: [
+					{text: 'volvo', value: 'A'},
+					{text: 'saab', value: 'B'},
+					{text: 'opel', value: 'C'},
+					{text: 'audi', value: 'D'}
+				],
+				isLoggedIn: false
+			},
+			methods: {
+				showTime: function() {
+					var date = new Date();
+					alert(date);
+				},
+				login: function() {
+					this.isLoggedIn = !this.isLoggedIn;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

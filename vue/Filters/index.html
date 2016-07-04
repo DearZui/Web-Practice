@@ -14,12 +14,22 @@
 	<!-- Filter Chain -->
 	<ul>
 		<li v-for="product in products | filterBy 'electronics' in 'category' |  orderBy 'name' -1">
-			{{ product.name | capitalize}} - {{ product.price | currency }}
+			{{ product.name | capitalize }} - {{ product.price | currency }}
+		</li>
+	</ul>
+
+	<ul>
+		<li v-for="product in products">
+			{{ product.name | capitalize }} - {{ product.price | discount 25 | currency }}
 		</li>
 	</ul>
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
 	<script>
+		Vue.filter('discount', function(value, discount) {
+			return value * (discount / 100);
+		})
+
 		new Vue({
 			el: 'body',
 			data: {

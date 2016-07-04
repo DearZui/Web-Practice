@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Gihub Markdown Editor with VueJs</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="github-markdown.css">
+	<style>
+		body {
+			background-color: #f4f7f7;
+		}
+
+		.header-text h1 {
+			color: #e85a71;
+		}
+
+		.header-text h4 {
+			color: #454552;
+		}
+
+		#editor, #preview {
+			height: 500px;
+			max-height: 500px;
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
+
+		.panel {
+			overflow-y: auto;
+			max-height: 500px;
+			padding: 10px;
+		}
+
+		.container {
+			padding-bottom: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container">
+		<div class="row">
+			<div class="col-xs-12 header-text">
+				<h1>Github Markdown Preview</h1>
+				<h4>Sherrif Chen</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<textarea id="editor" class="form-control" v-model="rawMarkdown"></textarea>
+			</div>
+			<div id="preview" class="col-xs-12 col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<article class="markdown-body">
+							{{{renderMarkdown}}}
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<button type="button" class="btn btn-primary pull-right" @click="renderPreview">Priview</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/vue.resource/0.7.0/vue-resource.min.js"></script>
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				rawMarkdown: '',
+				renderMarkdown: ''
+			},
+			methods: {
+				renderPreview: function() {
+					this.$http({
+						url: 'https://api.github.com/markdown',
+						method: 'POST',
+						data: {text: this.rawMarkdown, mode: 'gfm'}
+					}).then(function (response) {
+						this.renderMarkdown = response.data;
+					}, function (err) {
+						console.log(err);
+					});
+				}
+			}
+		});
+	</script>
+</body>
+</html>

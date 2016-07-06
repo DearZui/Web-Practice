@@ -26,7 +26,7 @@ app.post('/api/shorten', function(req, res) {
 	var longUrl = req.body.url;
 	var shortUrl = '';
 
-	Url.findOne()({long_url: longUrl}, function(err, doc) {
+	Url.findOne({long_url: longUrl}, function(err, doc) {
 		if (doc) {
 			shortUrl = config.webhost + base58.encode(doc._id);
 			res.send({'shortUrl': shortUrl});
@@ -50,6 +50,16 @@ app.post('/api/shorten', function(req, res) {
 
 app.get(':encoded_id', function(req, res){
 	// redirect to short url
+	var base58Id = req.params.encoded_id;
+	var id = base58.decode(base58Id);
+
+	Url.fineOne({id: id}, function(err, doc) {
+		if (doc) {
+			res.redirect(doc.long_url);
+		} else {
+			res.redirect(config.webhost);
+		}
+	});
 });
 
 var server = app.listen(3000, function() {

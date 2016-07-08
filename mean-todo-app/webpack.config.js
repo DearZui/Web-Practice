@@ -1,4 +1,4 @@
-var webpack =  require('webpack');
+var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
@@ -36,7 +36,7 @@ module.exports = {
 			loaders: [
 				'style',
 				'css',
-				'autoprefixer?bowsers=last 3 versions',
+				'autoprefixer?browsers=last 3 versions',
 				'sass?outputStyle=expanded'
 			]
 		},

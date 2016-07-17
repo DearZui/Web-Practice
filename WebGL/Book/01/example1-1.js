@@ -29,3 +29,19 @@ function createSquare(gl) {
 	var square = {buffer: vertexBuffer, vertSize: 3, nVerts: 4, primtype: gl.TRIANGLE_STRIP};
 	return square;
 }
+
+funtion initMatrices() {
+	modelViewMatrix = new Float32Array(
+		[1, 0, 0, 0,
+		 0, 1, 0, 0,
+		 0, 0, 1, 0,
+		 0, 0, -3.333, 1]
+		 );
+
+		projectionMatrix = new Float32Array(
+			[2.41421, 0, 0, 0,
+			0, 2.41421, 0, 0,
+			0, 0, -1.002002, -1, 
+			0, 0, -0.2002002, 0]
+	    );
+}

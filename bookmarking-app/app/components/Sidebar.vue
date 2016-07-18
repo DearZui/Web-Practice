@@ -39,3 +39,43 @@
 		<bookmark-modal :categories="categories"></bookmark-modal>
 	</div>
 </template>
+
+<script>
+	import store from '../store';
+	import CategoryModal from './CategoryModal.vue';
+	import BookmarkModal from './BookmarkModal.vue';
+
+	export default {
+		data () {
+			return {
+				selectedCategory: ''
+			}
+		},
+
+		props: ['categories'],
+
+		components: {
+			CategoryModal,
+			BookmarkModal
+		},
+
+		method: {
+			addBookmark() {
+				this.$broadcast('add-bookmark')
+			},
+
+			addCategory() {
+				this.$broadcast('add-category')
+			},
+
+			deleteCategory(category) {
+				store.deleteCategory(category)
+			},
+
+			categorySelected(category) {
+				this.selectedCategory = category;
+				this.$dispatch('category-selected', category);
+			}
+		}
+	}
+</script>

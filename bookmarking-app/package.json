@@ -1,0 +1,23 @@
+{
+  "name": "bookmarking-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^3.2.0",
+    "jquery": "^3.1.0",
+    "vue": "^1.0.26"
+  },
+  "devDependencies": {
+    "babel-runtime": "^5.8.38",
+    "electron-prebuilt": "^1.2.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

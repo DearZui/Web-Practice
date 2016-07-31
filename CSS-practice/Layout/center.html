@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css">
+		.wrap {
+			background-color: #b9b9b9;
+			width: 240px;
+			height: 160px;
+		}
+
+		.box {
+			color: white;
+			background-color: green;
+			width: 200px;
+			height: 120px;
+			overflow: auto;
+		}
+
+		.wrap1 {
+			position: relative;
+		}
+
+		.box1 {
+			margin: auto;
+			position: absolute;
+			left: 0;right: 0;top: 0;bottom: 0;
+		}
+
+		.wrap2 {
+			position: relative;
+		}
+		.box2 {
+			position: absolute;
+			top: 50%; left: 50%;
+			margin-left: -100px;
+			margin-top: -60px;
+		}
+
+		.wrap3 {
+			position: relative;
+		}
+		.box3 {
+			margin: auto;
+			position: absolute;
+			top: 50%; left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.wrap4 {
+			display: table;
+		}
+		.subwrap4 {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.box4 {
+			margin: auto;
+			overflow-wrap: break-word;
+			height: auto;
+			max-height: 80%;
+			max-width: 80%;
+		}
+
+		.wrap5 {
+			text-align: center;
+			overflow: auto;
+		}
+		.box5 {
+			display: inline-block;
+			vertical-align: middle;
+			width: auto;
+			height: auto;
+			max-width: 90%;
+			max-height: 90%;
+		}
+		.wrap5:after {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+			margin-left: -0.25em;
+		}
+
+		.wrap6 {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.box6 {
+			width: auto;
+			height: auto;
+			max-height: 90%;
+			max-width: 90%;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="wrap wrap1">
+		<div class="box box1">
+			<h3>完全居中方案一</h3>
+			<p>　　我与父亲不相见已二年余了，我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子，我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说，“事已如此，不必难过，好在天无绝人之路！”回家变卖典质，父亲还了亏空；又借钱办了丧事。这些日子，家中光景很是惨淡，一半为了丧事，一半为了父亲赋闲。丧事完毕，父亲要到南京谋事，我也要回北京念书，我们便同行。	
+			</p>
+		</div>
+	</div> -->
+
+<!-- 	<div class="wrap wrap2">
+		<div class="box box2">
+			<h3>完全居中方案一</h3>
+			<p>　　我与父亲不相见已二年余了，我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子，我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说，“事已如此，不必难过，好在天无绝人之路！”回家变卖典质，父亲还了亏空；又借钱办了丧事。这些日子，家中光景很是惨淡，一半为了丧事，一半为了父亲赋闲。丧事完毕，父亲要到南京谋事，我也要回北京念书，我们便同行。	
+			</p>
+		</div>
+	</div> -->
+
+	<!-- <div class="wrap wrap3">
+		<div class="box box3">
+			<h3>完全居中方案一</h3>
+			<p>　　我与父亲不相见已二年余了，我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子，我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说，“事已如此，不必难过，好在天无绝人之路！”回家变卖典质，父亲还了亏空；又借钱办了丧事。这些日子，家中光景很是惨淡，一半为了丧事，一半为了父亲赋闲。丧事完毕，父亲要到南京谋事，我也要回北京念书，我们便同行。	
+			</p>
+		</div>
+	</div> -->
+
+	<!-- <div class="wrap wrap4">
+		<div class="subwrap4">
+			<div class="box box4">
+				<h3>完全居中方案一</h3>
+				<p>　　我与父亲不相见已二年余了，我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子，我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说，“事已如此，不必难过，好在天无绝人之路！”回家变卖典质，父亲还了亏空；又借钱办了丧事。这些日子，家中光景很是惨淡，一半为了丧事，一半为了父亲赋闲。丧事完毕，父亲要到南京谋事，我也要回北京念书，我们便同行。	
+				</p>
+			</div>
+		</div>
+	</div> -->
+
+	<!-- <div class="wrap wrap5">
+		<div class="box box5">
+			<h3>完全居中方案一</h3>
+			<p>　　我与父亲不相见已二年余了，我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子，我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说，“事已如此，不必难过，好在天无绝人之路！”回家变卖典质，父亲还了亏空；又借钱办了丧事。这些日子，家中光景很是惨淡，一半为了丧事，一半为了父亲赋闲。丧事完毕，父亲要到南京谋事，我也要回北京念书，我们便同行。	
+			</p>
+		</div>
+	</div> -->
+
+	<div class="wrap wrap6">
+		<div class="box box6">
+			<h3>完全居中方案一</h3>
+			<p>　　我与父亲不相见已二年余了，我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子，我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说，“事已如此，不必难过，好在天无绝人之路！”回家变卖典质，父亲还了亏空；又借钱办了丧事。这些日子，家中光景很是惨淡，一半为了丧事，一半为了父亲赋闲。丧事完毕，父亲要到南京谋事，我也要回北京念书，我们便同行。	
+			</p>
+		</div>
+	</div>
+</body>
+</html>

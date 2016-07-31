@@ -30,3 +30,4 @@ var city = localStorage.city;
 city = city?city:'beijing';
 var url = 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+city+',china&lang=zh_cn';
 httpRequest(url, showWeather);
+ 

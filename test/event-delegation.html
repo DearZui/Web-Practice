@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<ul id="ul1">
+		<li>1111</li>
+		<li>1111</li>
+		<li>1111</li>
+		<li>1111</li>
+		<li>1111</li>
+	</ul>
+	<button id="addLi" onclick="addLi()">添加li标签</button>
+</body>
+
+<script type="text/javascript">
+	const oUl = document.getElementById('ul1');
+	var ali = document.getElementsByTagName('li');
+	for (var i=0; i < ali.length; i++) {
+		ali[i].onclick = function() {
+			this.style.background = 'red';
+		}
+	}
+	/*oUl.onclick = function(ev) {
+		var ev = ev || window.event;
+		let target = ev.targe || ev.srcElement;
+		if(target.nodeName.toLowerCase() == 'li') {
+			target.style.background = 'red';
+		}
+	};*/
+
+	function addLi() {
+		var node=document.createElement("LI");
+		var textnode=document.createTextNode("1111");
+		node.appendChild(textnode);
+		oUl.appendChild(node);	
+	}
+</script>
+</html>

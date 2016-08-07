@@ -1,0 +1,22 @@
+.container {
+	width: 1030px;
+	max-height: 1456.42px;
+	margin: 0 auto;
+	border: 1px solid grey;
+}
+
+.left {
+	width: 33.33%;
+	background-color: #6DC7B4;
+	height: 1456.42px;
+}
+
+.avatar {
+	margin-top: 30px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.avatar img {
+	border-radius: 100%;
+}

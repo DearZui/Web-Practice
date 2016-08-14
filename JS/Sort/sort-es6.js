@@ -9,3 +9,15 @@ const insertion = (input) => {
 	}
 	return input;
 }
+
+//selection sort
+const selection = (input) => {
+	for (let i = 0, len = input.length; i < len; i++) {
+		var min = i;
+		for (let j = i+1; j < len; j++) {
+			if (input[j] < input[min]) min = j;
+		}
+		input[i] = [input[min], input[min] = input[i]][0];
+	}
+	return input;
+}

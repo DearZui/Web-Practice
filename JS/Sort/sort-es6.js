@@ -1,5 +1,5 @@
 //insertion sort
-function insertion(input) {
+const insertion = (input) => {
 	for (let i = 1, len = input.length; i < len; i++) {
 		for (let j = i; j > 0; j--) {
 			if (input[j] < input[j-1]) {

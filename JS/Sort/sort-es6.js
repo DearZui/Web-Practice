@@ -21,3 +21,14 @@ const selection = (input) => {
 	}
 	return input;
 }
+
+//bubble sort
+const bubble = (input) => {
+	for (let i = 0; len = input.length; i < len ; i++) {
+		for (let j = i+1; j < len; j++) {
+			if (input[j] < input[i])
+				input[j] = [input[i], input[i] = input[j]][0];
+		}
+	}
+	return input;
+}

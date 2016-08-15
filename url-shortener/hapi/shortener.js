@@ -30,7 +30,7 @@ server.register(require('inert'), (err) => {
 			server.start(err => {
 				if(err) throw err;
 
-				console.log('Server running at port ${server.info.port}');
+				console.log(`Server running at port ${server.info.port}`);
 			});
 		});
 });

@@ -4,5 +4,3 @@ function randomChar() {
 	if(n < 36) return String.fromCharCode(n + 55);
 	return String.fromCharCode(n+61);
 }
-
-function createHash

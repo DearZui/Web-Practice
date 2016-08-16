@@ -37,7 +37,7 @@
         alert("div的事件");
     }*/
 
-    //eventPhase用来确定事件当前正处于事件流的哪个阶段，1: 捕获阶段 2: 目标对象 3: 冒泡阶段
+/*    //eventPhase用来确定事件当前正处于事件流的哪个阶段，1: 捕获阶段 2: 目标对象 3: 冒泡阶段
     var div = document.getElementById("eventPhase_outer");
     var btn = document.getElementById("eventPhase_inner");
     btn.onclick = function(e) {
@@ -48,4 +48,19 @@
     },true);
     div.addEventListener("click", function (e) {
          alert(e.eventPhase);
-    },false);
+    },false);*/
+
+    /*//相当于DOM中的target属性
+    var btn = document.getElementById("srcElement_btn");
+    btn.onclick = function() {
+        alert(window.event.srcElement === this);
+    }
+    btn.attachEvent("onclick", function(e) {
+        alert(e.srcElement === this);
+    })*/
+
+    //遗憾的是我们没有办法确定时间是否能被取消
+    var mylink = document.getElementById("returnValue_link");
+    mylink.onclick = function () {
+         event.returnValue = false;
+    }

@@ -20,8 +20,32 @@
         alert(e.target === document.getElementById("btn_2"));
     }*/
 
-    //注意只有cancelable属性设置为true的事件才可以使用preventDefault()来取消默认行为
+/*    //注意只有cancelable属性设置为true的事件才可以使用preventDefault()来取消默认行为
     var mylink = document.getElementById("mylink");
     mylink.onclick = function(e) {
         e.preventDefault();
-    };
+    };*/
+
+/*    //stopPropagation()取消进一步的事件捕获或冒泡
+    var div = document.getElementById("stopPorpagation_outer");
+    var btn = document.getElementById("stopPorpagation_inner");
+    btn.onclick = function(e) {
+        alert("btn的事件");
+        e.stopPropagation();
+    }
+    div.onclick = function(e) {
+        alert("div的事件");
+    }*/
+
+    //eventPhase用来确定事件当前正处于事件流的哪个阶段，1: 捕获阶段 2: 目标对象 3: 冒泡阶段
+    var div = document.getElementById("eventPhase_outer");
+    var btn = document.getElementById("eventPhase_inner");
+    btn.onclick = function(e) {
+        alert(e.eventPhase);
+    }
+    div.addEventListener("click", function (e) {
+         alert(e.eventPhase);
+    },true);
+    div.addEventListener("click", function (e) {
+         alert(e.eventPhase);
+    },false);

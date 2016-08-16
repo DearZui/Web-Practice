@@ -13,6 +13,16 @@
 <h3>Prevent Default Event</h3>
 <a href="http://www.baidu.com" id="mylink">如果不prevent，点击我默认会跳转到百度</a>
 
+<h3>Stop Propagation</h3>
+<div style="width: 100px; height: 100px; background-color: green;" id="stopPorpagation_outer">
+	<input type="button" value="点击我外层的div的事件会被stop" id="stopPorpagation_inner">
+</div>
+
+<h3>Event Phase</h3>
+<div style="width: 100px; height: 100px; background-color: yellow;" id="eventPhase_outer">
+	<input type="button" value="三个阶段的事件" id="eventPhase_inner">
+</div>
+
 <script src="index.js"></script>
 </body>
 </html>

@@ -5,6 +5,33 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Right-Click Menu</title>
 	<link rel="stylesheet" href="">
+
+	<style type="text/css">
+		html body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+
+		#menu_box {
+			width: 250px;
+			border: solid 1px #ccc;
+		}
+
+		#menu_ul {
+			height: 100%;
+		}
+
+		#big {
+			margin: 0;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+	</style>
 </head>
 <body>
 	<div id="menu_box">
@@ -16,13 +43,31 @@
 		</ul>
 	</div>
 
+	<div id="big"></div>
+
 <script type="text/javascript">
 	window.onload = function() {
 		const div = document.getElementById("menu_box");
 		const menu = document.getElementById("menu_ul");
+		const div_big = document.getElementById("big");
 
-		div.addEventListener("contextmenu", function(e) {
-			e.preventDefault();
+		div.style = "display: none;"
+
+		window.addEventListener("contextmenu", function(e) {
+			console.log(e);
+
+			if(e.button == 2) {
+				e.preventDefault();
+			}
+
+			div.style = "display: ;"
+			div.style.position = "fixed";
+			div.style.left = e.clientX + 'px';
+			div.style.top = e.clientY + 'px';
+		});
+
+		div_big.addEventListener("mousedown", function (e) {
+			 div.style.display = "none";
 		})
 	}
 	

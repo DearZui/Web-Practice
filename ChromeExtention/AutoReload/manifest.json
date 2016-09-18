@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "Auto Refresh",
+	"version": "1.0",
+	"description": "Auto reload page",
+	"icons": {
+		"16": "refresh16.png",
+		"48": "refresh48.png",
+		"128": "refresh128.png"
+	},
+	"browser_action": {
+		"default_icon": {
+			"19": "refresh16.png",
+			"38": "refresh48.png"
+		},
+		"default_title": "Auto-Refresh",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"scripts": [
+			"refresh.js"
+		]
+	},
+	"permissions": [
+		"tabs"
+	]
+}

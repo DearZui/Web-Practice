@@ -1,4 +1,5 @@
 Router.configure({
+
 	layoutTemplate: 'layout',
 	loadingTemplate: 'loading',
 	notFoundTemplate: 'notFound',
@@ -6,9 +7,12 @@ Router.configure({
 });
 
 Router.route('/', {name: 'postsList'});
+
 Router.route('/posts/:_id', {
 	name: 'postPage',
 	data: function() { return Posts.findOne(this.params._id); }
 });
+
+Router.route('/submit', {name: 'postPage'};)
 
 Router.onBeforeAction('dataNotFound', {only: 'postPage'});

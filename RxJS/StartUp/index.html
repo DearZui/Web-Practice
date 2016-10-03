@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Weather Monitoring in RxJS</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css">
+		#form {
+			margin-bottom: 20px;
+		}
+
+		.location {
+			float: left;
+			padding: 10px;
+			margin-right: 20px;
+			margin-bottom: 20px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+
+		.location p {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+
+		.zip { font-size: 2em; }
+		.temp { font-size: 4em; }
+	</style>
+</head>
+<body>
+	<div id="app-container">
+		<div id="form">
+			<label>Zip Code:</label>
+			<input type="text" id="zipcode-input">
+			<button id="add-location">Add Location</button>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.min.js"></script>
+	<script type="text/javascript">
+		console.log('RxJS included?', !!Rx);
+	</script>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

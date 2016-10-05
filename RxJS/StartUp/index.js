@@ -26,3 +26,41 @@ const zipTemperatureStreamFactory = zip =>
 	Rx.Observable
 		.fromPromise(getTemperature(zip))
 		.map(({ main: { temp } }) => ({ temp, zip }));
+
+zipcodeStream
+	.flatMap(zipTemperatureStreamFactory)
+	.forEach(({ zip, temp }) => {
+		const locationEle = document.createElement('div');
+		locationEle.id = `zip-${zip}`;
+		locationEle.classList.add(`location`);
+
+		const zipEle = document.createElement('p');
+		zipEle.classList.add('zip');
+		zipEle.innerText = zip;
+
+		const tempEle = document.createElement('p');
+		tempEle.classList.add('temp');
+		tempEle.innerHTML = `${temp}&deg;F`;
+
+		locationEle.appendChild(zipEle);
+		locationEle.appendChild(tempEle);
+		appContainer.appendChild(locationEle);
+
+		zipcodeInput.value = '';
+	});
+
+const replayZipStream = new Rx.ReplaySubject();
+zipcodeStream.subscribe(replayZipStream);
+
+Rx.Observable
+	.interval(20000)
+	.flatMapLatest(() => replayZipStream)
+	.flatMap(zipTemperatureStreamFactory)
+	.forEach(({ zip, temp }) => {
+		console.log('Updating!', zip, temp);
+
+		const locationEle = document.getElementById(`zip-${zip}`);
+		const tempEle = locationEle.querySelector('.temp');
+
+		tempEle.innerHTML = `${temp}&deg;F`;
+	});

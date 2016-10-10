@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<p>Drag the link to the red square.</p>	
+<a href="http://www.dearzui.com">Dearzui.com</a>
+<div id="droptarget" style="width: 100px; height: 100px; float: right; background: red;"></div>
+<div id="output"></div>
+
+<script type="text/javascript">
+	const droptarget = document.getElementById("droptarget");
+
+	function handleEvent(e) {
+		document.getElementById("output").innerHTML += e.type + "<br>";
+		switch (e.type) {
+			case "drop":
+			case "dragdrop": 
+				droptarget.innerHTML = e.dataTransfer.getData("url") || dataTransfer.getData("text/uri-list");
+			case "dropenter":
+			case "dropover": 
+				EventUtil.preventDefault(e);
+				break;
+		}
+	}
+
+	EventUtil.addHandler(droptarget, "dragenter", handleEvent);
+	EventUtil.addHandler(droptarget, "dragover", handleEvent);
+	EventUtil.addHandler(droptarget, "dragleave", handleEvent);
+	EventUtil.addHandler(droptarget, "drop", handleEvent);
+</script>
+</body>
+</html>

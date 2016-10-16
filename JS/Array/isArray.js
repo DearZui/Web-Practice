@@ -27,7 +27,7 @@ function isArray_constructor(para) {
 	// a ==> true
 	para.constructor = Object;
 	console.log(para.constructor == Array)
-	// a ==> fale
+	// a ==> false
 	// Not so good
 }
 

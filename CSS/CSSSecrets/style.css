@@ -1,0 +1,37 @@
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+#outline {
+	display: flex;
+	justify-content: space-around;
+}
+
+#outline-normal {
+	width: 100px;
+	height: 60px;
+	margin: 25px;
+	background-color: yellowgreen;
+	border: 10px solid #655;
+	outline: 5px solid deeppink;
+}
+
+#outline-stroke {
+	width: 100px;
+	height: 60px;
+	margin: 25px;
+	background-color: yellowgreen;
+	border: 10px solid #655;
+	outline: 1px dotted white;
+	outline-offset: -5px;
+}
+
+#outline-radius {
+	width: 100px;
+	height: 60px;
+	margin: 25px;
+	background-color: yellowgreen;
+	border-radius: 5px;
+	outline: 2px solid grey;
+}

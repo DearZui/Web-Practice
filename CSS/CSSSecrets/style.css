@@ -3,6 +3,12 @@ body {
 	flex-direction: column;
 }
 
+.split-line {
+	height: 1px;
+	width: 100%;
+	background-color: grey;
+}
+
 #outline {
 	display: flex;
 	justify-content: space-around;
@@ -34,4 +40,45 @@ body {
 	background-color: yellowgreen;
 	border-radius: 5px;
 	outline: 2px solid grey;
+}
+
+#bg-position {
+	display: flex;
+	justify-content: space-around;
+}
+
+#bg-position-right-bottom {
+	background: url(http://csssecrets.io/images/code-pirate.svg)
+	            no-repeat bottom right #58a;
+	/* for advanced browser
+		backgroun: rul(code-pirate.svg) no-repeat #58a;
+	 */
+	background-position: right 20px bottom 10px;
+	max-width: 44em;
+	min-height: 5em;
+	padding: 10px;
+	color: white;
+	font: 100%/1 sans-serif;
+}
+
+#bg-origin {
+	background: url(http://csssecrets.io/images/code-pirate.svg)
+	            no-repeat bottom right #58a;
+	background-origin: content-box;
+	max-width: 44em;
+	min-height: 5em;
+	padding: 10px;
+	color: white;
+	font: 100%/1 sans-serif;
+}
+
+#calc-offset {
+	background: url(http://csssecrets.io/images/code-pirate.svg)
+				no-repeat bottom right #58a;
+				background-position: calc(100% - 20px) calc(100% - 10px);
+	max-width: 44em;
+	min-height: 5em;
+	padding: 10px;
+	color: white;
+	font: 100%/1 sans-serif;
 }

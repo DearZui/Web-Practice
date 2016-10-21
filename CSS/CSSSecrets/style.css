@@ -5,6 +5,15 @@ body {
 body > div {
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
+}
+span {
+	width: 10em;
+	min-height: 2em;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
 }
 
 .split-line {
@@ -88,7 +97,6 @@ body > div {
 }
 
 #inner-roundding-2e {
-	height: 5em;
 	width: 10em;
 	background-color: #655;
 	padding: .8em;
@@ -100,10 +108,77 @@ body > div {
 }
 
 #inner-roundding-1e {
+	margin: 1em;
 	height: 5em;
 	width: 10em;
 	background: tan;
 	border-radius: .8em;
 	outline: .6em solid #655;
 	box-shadow: 0 0 0 .5em #655;
+}
+
+
+#normal-linear-gradient {
+	margin: 1em;
+	width: 10em;
+	height: 5em;
+	background: linear-gradient(#fb3, #58a);
+}
+
+#linear-gradient-range {
+	margin: 1em;
+	width: 10em;
+	height: 5em;
+	background: linear-gradient(#fb3 20%, #58a 80%)
+}
+
+#clear-linear-gradient {
+	margin: 1em;
+	width: 10em;
+	height: 5em;
+	background: linear-gradient(#fb3 50%, #58a 50%)
+}
+
+#shortened-stripe {
+	margin: 1em;
+	width: 10em;
+	height: 5em;
+	background: linear-gradient(#fb3 50%, #58a 50%);
+	background-size: 100% 30px;
+	background-repeat: no-repeat;
+	border: 1px solid #ccc;
+}
+
+#default-stripe {
+	margin: 1em;
+	width: 10em;
+	height: 5em;
+	background: linear-gradient(#fb3 50%, #58a 50%);
+	background-size: 100% 30px;
+}
+
+#stripe-diff-width {
+	margin: 1em;
+	width: 10em;
+	height: 5em;
+	/* background: linear-gradient(#fb3 30%, #58a 30%);
+	background-size: 100% 30px; */
+	background: linear-gradient(#fb3 30%, #58a 0);
+	background-size: 100% 30px;
+}
+
+#three-stripes {
+	margin: 1em;
+	width: 10em;
+	height: 5em;
+	background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+	background-size: 100% 45px;
+}
+
+#vertical-stripes {
+	margin: 1em;
+	width: 10em;
+	height: 5em;
+	background: linear-gradient(to right, #fb3 50%, #58a 0);
+	background-size: 30px 100%;
 }

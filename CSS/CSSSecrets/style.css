@@ -2,6 +2,10 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+body > div {
+	display: flex;
+	justify-content: space-around;
+}
 
 .split-line {
 	height: 1px;
@@ -54,7 +58,7 @@ body {
 		backgroun: rul(code-pirate.svg) no-repeat #58a;
 	 */
 	background-position: right 20px bottom 10px;
-	max-width: 44em;
+	width: 10em;
 	min-height: 5em;
 	padding: 10px;
 	color: white;
@@ -65,7 +69,7 @@ body {
 	background: url(http://csssecrets.io/images/code-pirate.svg)
 	            no-repeat bottom right #58a;
 	background-origin: content-box;
-	max-width: 44em;
+	width: 10em;
 	min-height: 5em;
 	padding: 10px;
 	color: white;
@@ -76,9 +80,30 @@ body {
 	background: url(http://csssecrets.io/images/code-pirate.svg)
 				no-repeat bottom right #58a;
 				background-position: calc(100% - 20px) calc(100% - 10px);
-	max-width: 44em;
+	width: 10em;
 	min-height: 5em;
 	padding: 10px;
 	color: white;
 	font: 100%/1 sans-serif;
+}
+
+#inner-roundding-2e {
+	height: 5em;
+	width: 10em;
+	background-color: #655;
+	padding: .8em;
+}
+#inner-roundding-2e > div {
+	background: tan;
+	border-radius: .8em;
+	padding: 1em;
+}
+
+#inner-roundding-1e {
+	height: 5em;
+	width: 10em;
+	background: tan;
+	border-radius: .8em;
+	outline: .6em solid #655;
+	box-shadow: 0 0 0 .5em #655;
 }

@@ -7,6 +7,11 @@ body > div {
 	justify-content: space-around;
 	flex-wrap: wrap;
 }
+body > div > div > div {
+	margin: 1em;
+	width: 10em;
+	height: 5em;
+}
 span {
 	width: 10em;
 	min-height: 2em;
@@ -17,6 +22,7 @@ span {
 }
 
 .split-line {
+	display: block;
 	height: 1px;
 	width: 100%;
 	background-color: grey;
@@ -181,4 +187,20 @@ span {
 	height: 5em;
 	background: linear-gradient(to right, #fb3 50%, #58a 0);
 	background-size: 30px 100%;
+}
+
+
+#diagonal-wrong-stripes {
+	background: linear-gradient(45deg, #fb3 50%, #58a 0);
+	background-size: 30px 30px;
+}
+
+#diagonal-4-stripes {
+	background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+	background-size: 30px 30px;
+}
+
+#diagonal-bold-stripes {
+	background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+	background-size: 42.4264px 42.4264px;	
 }

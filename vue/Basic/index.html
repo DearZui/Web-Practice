@@ -8,8 +8,10 @@
 </head>
 <body>
 	<div id="vue-instance">
-		Enter a greeting: <input type="text" v-model="greeting">
+		Enter your name: <input type="text" v-model="name">
 		<p>{{greeting}}</p>
+		<button @click="sayHello">Hey there!</button>
+		<!-- @click can be replaced by 'v-on:click' -->
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
@@ -18,7 +20,12 @@
 		var vm = new Vue({
 			el: '#vue-instance',
 			data: {
-				greeting: 'Hello VueJs'
+				name: ''
+			},
+			methods: {
+				sayHello: function() {
+					alert('Hey there, ' + this.name);
+				}
 			}
 		})
 	</script>

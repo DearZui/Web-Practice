@@ -234,3 +234,16 @@ span {
 					  linear-gradient(90deg, hsla(0,0%,100%,.3) 1px, transparent 0);
 	background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
 }
+
+#r-gradient {
+	background: #655;
+	background-image: radial-gradient(tan 30%, transparent 0);
+	background-size: 30px 30px; 
+}
+
+#polka {
+	background: #655;
+	background-image: radial-gradient(tan 30%, transparent 0),
+					  radial-gradient(tan 30%, transparent 0);
+	background-size: 0 0, 15px 15px;
+}

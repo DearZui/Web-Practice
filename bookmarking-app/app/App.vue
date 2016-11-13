@@ -14,5 +14,44 @@
 </template>
 
 <script>
-	
+	import store from './store';
+	import Sidebar from './components/Sidebar.vue';
+	import BookmarkList from './components/BookmarkList.vue';
+	import { filterByCategory } from './filters';
+
+	exports default {
+		components: {
+			Sidebar,
+			BookmarkList
+		},
+
+		data() {
+			return {
+				categories: {},
+				bookmarks: {},
+				selectedCategory: ''
+			}
+		},
+
+		filters: {
+			filters: {
+				filterByCategory
+			}
+		},
+
+		created () {
+			store.on('data-updated', this.updateListings)
+		},
+
+		methods: {
+			updateListings(categories, bookmarks) {
+				this.categories = categories;
+				this.bookmarks = bookmarks;
+			},
+
+			setSelectedCategory(category) {
+				this.selectedCategory = category;
+			}
+		}
+	}
 </script>

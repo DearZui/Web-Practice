@@ -1,0 +1,43 @@
+<template>
+	<div>
+		<div id="categories">
+			<div id="cat-header">
+				<h2><i class="bookmark icon"></i>Bookmark</h2>
+			</div>
+			<div class="container">
+				<h2>Categories
+					<span class="clickable right-float">
+						<i @click="addCategory" class="add icon"></i>
+					</span>
+				</h2>
+				<div class="ui list">
+					<div class="item clickable">
+						<div class="content">
+							<a class="ui grey empty circular label"></a>
+							<span @click="categorySelected('')">All</span>
+						</div>
+					</div>
+					<div v-for="(name, color) in categories" class="item clickable">
+						<div class="content">
+							<a class="ui {{ color }} empty circular label"></a>
+							<span @click="categorySelected(name)"
+								:class="{selected: selectedCategory === name}">
+								{{ name }}		
+							</span>
+							<i v-if="name !== 'Uncategorized'" class="remove icon right-float"
+								@click="deleteCategory(name)">
+									
+							</i>
+						</div>
+					</div>
+				</div>
+				<button @click="addBookmark"
+					class="ui grey inverted basic icon circular button right-float">
+					<i class="icon add"></i>		
+				</button>
+			</div>
+		</div>
+		<category-modal></category-modal>
+		<category-modal :categories="categories"></category-modal>
+	</div>
+</template>

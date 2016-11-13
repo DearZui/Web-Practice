@@ -14,33 +14,34 @@ db.on('value', (snapshot) => {
 	if (bookmarkData) {
 		categories = bookmarkData.categories;
 		bookmarks = bookmarkData.bookmarks;
-		store.emit('data-updated', categories, bookmarks)
+		store.emit('data-updated', categories, bookmarks);
 	}
-});
+})
 
 store.addCategory = (category) => {
 	categoriesRef.update(category);
-};
+}
 
 store.deleteCategory = (catName) => {
-	if (!('Uncategorized' in categories)) {
-		categoriesRef.update({ 'Uncategorized': 'white' });
+	if(!('Uncategorized' in categories)) {
+		categoriesRef.update({'Uncategorized': 'white'})
 	}
 
-	for (var key in bookmarks) {
-		if (bookmarks[key].category === catName) {
-			bookmarksRef.child(key).update({category: 'Uncategorized'});
+	for(var key in bookmarks) {
+		if(bookmarks[key].category === catName) {
+			bookmarksRef.child(key).update({category: 'Uncategorized'})
 		}
 	}
-	categories.child(catName).remove();
-};
 
-store.addBookmark = (bookmark) => {
+	categoriesRef.child(catName).remove();
+}
+
+store.addBookMark = (bookmark) => {
 	bookmarksRef.push(bookmark);
-};
+}
 
 store.deleteBookmark = (bookmarkId) => {
-	bookmarksRef.child(bookmarkId).remove();
-};
+	bookmarksRef.child(bookmarkId.remove());
+}
 
 export default store;

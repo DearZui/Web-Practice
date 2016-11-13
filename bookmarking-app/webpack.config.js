@@ -16,7 +16,7 @@ module.exports = {
 			{
 				test: /\.js$/,
 				loader: 'babel',
-				exclude: /node_moudules/
+				exclude: /node_modules/
 			}
 		]
 	},
@@ -24,7 +24,7 @@ module.exports = {
 		"presets": ["es2015"],
 		"plugins": ["transform-runtime"]
 	},
-	plugins:[
+	plugins: [
 		new webpack.ExternalsPlugin('commonjs', [
 			'electron'
 		])

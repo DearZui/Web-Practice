@@ -19,7 +19,7 @@
 	import BookmarkList from './components/BookmarkList.vue';
 	import { filterByCategory } from './filters';
 
-	exports default {
+	export default {
 		components: {
 			Sidebar,
 			BookmarkList

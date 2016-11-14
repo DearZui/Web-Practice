@@ -5937,7 +5937,7 @@
 	__vue_exports__ = __webpack_require__(4)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(15)
+	var __vue_template__ = __webpack_require__(17)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -5988,11 +5988,11 @@
 
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
-	var _BookmarkList = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/BookmarkList.vue\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _BookmarkList = __webpack_require__(15);
 
 	var _BookmarkList2 = _interopRequireDefault(_BookmarkList);
 
-	var _filters = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./filters\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _filters = __webpack_require__(16);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7173,6 +7173,35 @@
 
 /***/ },
 /* 15 */
+/***/ function(module, exports) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "E:\\Github\\Web-Practice\\bookmarking-app\\app\\components\\BookmarkList.vue"
+	if (__vue_options__.functional) {console.error("[vue-loader] BookmarkList.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;

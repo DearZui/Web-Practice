@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="background-image: url('./bg.png')">
+
+	<div id="root">
+		<ul>
+			<li v-for="name in names" v-text="name"></li>
+		</ul>
+
+		<input type="">
+		<button>Add Name</button>
+	</div>
+
+	<script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
+
+	<script>
+		var app = new Vue({
+			el: '#root',
+			data: {
+				names: ['Joe', 'Mary', 'Jane', 'Jack']
+			}
+		})
+
+	</script>
+</body>
+</html>
